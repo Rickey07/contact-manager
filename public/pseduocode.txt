@@ -1,0 +1,18 @@
+1.) Import the required modules and create-react-app (Modules Required:- React-router , uuidv4 , axios).
+2.) Create all the components statically.
+3.) Define routes using router.
+4.) Write individual components logic.
+5.) Write CRUD Operations.
+
+Briefely Described:- 
+
+1.) Form validation needs to be done on the form first whenever someone submits the form we should check if the details are empty or not?
+2.) Store all the form details in state using UseState hook.
+3.) Render the contact List data using map function
+4.) Persist the data using local storage
+5.) Define route for each individual contact detail component
+6.) Define route for programmatically routing when user add the contact.
+7.) Define a method or function to delete the user and update the state and localstorage too.
+8.) Write a method for updating the user details
+9.) Need to include API for random images creation for the users.
+10.) Write a function to validate if the userAlready exists in the data using email and number
