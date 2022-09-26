@@ -12,36 +12,36 @@ export default function Addcontact( {getContactList , contactDetailsRecieved}) {
   const [number,setNumber] = useState("");
   const [contactDetails,setContactDetails] = useState({})
 
-
-  const checkUserExistence = (users) => {
-    users.forEach((user) => {
-      if (user.email === email || user.number === number) {
-        console.log("User Already exists");
-        return false
-      } else {
-        console.log("You can go through it")
-      }
-    })
-  } 
-  
   const submitHandler = (e) => {
     e.preventDefault();
+      // Function to check if the user Already exists in the database.
+    const checkUserExistence = (users) => {
+      let boolean;
+      users.forEach ((user) => {
+        if (user.email === email || user.name === name) {
+          console.log("here");
+          boolean = true
+        } else {
+          boolean = false;
+        }
+      })
+      return boolean;
+    }
+
+    // Required Form Validation before submission & creation of new contact
     if (name === '' || email === '' || number === '') {
       alert('All fields are required');
       return false;
     } else if (number.length < 10 || number.length > 10) {
       alert('Number Length Should be equal to 10')
       return false;
+    } else if (checkUserExistence(contactDetailsRecieved)) {
+      alert('OOPS!Contact with this  email or Number Already Exists!')
+      return false;
     } else {
-      if (checkUserExistence(contactDetailsRecieved)===true) {
-        setContactDetails({name:name,email:email,number:number,id:uuid()})
-        getContactList({name:name,email:email,number:number,id:uuid()});
-        return true;
-      } else {
-        console.log("yes it is here");
-        return false;
-      }
-    }
+          setContactDetails({name:name,email:email,number:number,id:uuid()})
+          getContactList({name:name,email:email,number:number,id:uuid()});
+        }
     navigate('/')
   }
   return (

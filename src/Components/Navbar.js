@@ -1,8 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import {LinkContainer} from 'react-router-bootstrap';
 
-export default function Navbar() {
+export default function Navbar({getText}) {
+
+  const [searchText,setSearchText] = useState("");
+
+
+  //ChangeHandler for setting the text
+  const changeHandler = (e) => {
+    setSearchText(e.target.value)
+  }
+  // Send back the searchedTxt to App component
+  getText(searchText);
+
   return (
     <>
     <nav className="navbar navbar-expand-lg bg-light">
@@ -17,9 +28,12 @@ export default function Navbar() {
                     <Link className="nav-link active" aria-current="page" href="#" to="/">Home</Link>
                 </li>
                 <li className="nav-item">
-                <Link className="nav-link" href="#" to="/addcontact">Add Contact</Link>
+                    <Link className="nav-link" href="#" to="/addcontact">Add Contact</Link>
                 </li>
             </ul>
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search Contact by Name" onChange={changeHandler} aria-label="Search" value={searchText}/>
+            </form>
             </div>
         </div>
         </nav>

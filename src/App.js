@@ -5,12 +5,16 @@ import {BrowserRouter as Router , Link , Routes , Route} from 'react-router-dom'
 import Addcontact from './Components/Addcontact';
 import Contactlist from './Components/Contactlist';
 import Contactdetail from './Components/Contactdetail';
+import Contactedit from './Components/Contactedit';
 
 
 
 
 function App() {
   const [contactDetailsRecieved,setContactDetails] = useState(JSON.parse(localStorage.getItem('contactDetailsRecieved'))===null?[]:JSON.parse(localStorage.getItem('contactDetailsRecieved')));
+
+  //Need to update the searchedTxt which we're recieving from the App so everytime the component re-renders it will send the update state to props.
+  const [searchedTxt,setSearchedText] = useState("");
 
   // UseEffect to update local storage each the state updates and component re-renders
   useEffect(() => {
@@ -30,13 +34,19 @@ function App() {
     setContactDetails(filteredContactDetails);
   }
 
+  // Function to get the text from the navbar & Search the contact
+  const getText = (text) => {
+     setSearchedText(text);
+  }
+
   return (
     <>
-    <Navbar/>
+    <Navbar getText = {getText}/>
       <Routes>
-        <Route path='/' element={<div> <Contactlist contactDetailsRecieved = {contactDetailsRecieved} idHandler={idHandler}/></div>}/>
-        <Route path='/addContact' element={<Addcontact getContactList = {getContactList} contactDetailsRecieved = {contactDetailsRecieved}/>}/>
+        <Route path='/' element={<div> <Contactlist contactDetailsRecieved = {contactDetailsRecieved} idHandler={idHandler} searchedTxt={searchedTxt}/></div>}/>
+        <Route path='/addContact' element={<Addcontact getContactList = {getContactList} contactDetailsRecieved = {contactDetailsRecieved} />}/>
         <Route path='/contact/:id' element={<Contactdetail/>}/>
+        <Route path='/contact/edit/:id' element={<Contactedit/>}/>
       </Routes>
     </>
   );

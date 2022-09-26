@@ -15,4 +15,5 @@ Briefely Described:-
 7.) Define a method or function to delete the user and update the state and localstorage too.
 8.) Write a method for updating the user details
 9.) Need to include API for random images creation for the users.
-10.) Write a function to validate if the userAlready exists in the data using email and number
+10.) Write a function to validate if the userAlready exists in the data using email and number.
+11.) Create an search functionality to filter out the user by name
