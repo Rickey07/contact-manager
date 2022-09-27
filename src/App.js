@@ -8,8 +8,11 @@ import Contactdetail from './Components/Contactdetail';
 import Contactedit from './Components/Contactedit';
 import Signup from './Components/Signup';
 import Login from './Components/Login';
+import Logout from './Components/Logout';
+import PasswordReset from './Components/PasswordReset';
 import 'bootstrap/dist/css/bootstrap.css'
 import { UserAuthContextProvider } from './Contexts/AuthContext';
+import ProtectedRoute from './Components/ProtectedRoute'
 
 function App() {
   const [contactDetailsRecieved,setContactDetails] = useState(JSON.parse(localStorage.getItem('contactDetailsRecieved'))===null?[]:JSON.parse(localStorage.getItem('contactDetailsRecieved')));
@@ -42,15 +45,15 @@ function App() {
 
   return (
     <>
-    <Navbar getText = {getText}/>
     <UserAuthContextProvider>
       <Routes>
-        <Route path='/' element={<div> <Contactlist contactDetailsRecieved = {contactDetailsRecieved} idHandler={idHandler} searchedTxt={searchedTxt}/></div>}/>
-        <Route path='/addContact' element={<Addcontact getContactList = {getContactList} contactDetailsRecieved = {contactDetailsRecieved} />}/>
-        <Route path='/contact/:id' element={<Contactdetail/>}/>
-        <Route path='/contact/edit/:id' element={<Contactedit/>}/>
+        <Route path='/' element={ <ProtectedRoute> <Navbar getText = {getText}/> <div> <Contactlist contactDetailsRecieved = {contactDetailsRecieved} idHandler={idHandler} searchedTxt={searchedTxt}/></div> </ProtectedRoute>}/>
+        <Route path='/addContact' element={<ProtectedRoute><Addcontact getContactList = {getContactList} contactDetailsRecieved = {contactDetailsRecieved} /> </ProtectedRoute>}/>
+        <Route path='/contact/:id' element={<ProtectedRoute><Contactdetail/></ProtectedRoute>}/>
+        <Route path='/contact/edit/:id' element={<ProtectedRoute><Contactedit/></ProtectedRoute>}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/signup' element={<Signup/>}/>
+        <Route path='/passwordReset' element={<PasswordReset/>}/>
       </Routes>
     </UserAuthContextProvider>
     </>

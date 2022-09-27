@@ -9,7 +9,7 @@ export default function Login() {
     const [email,setEmail] = useState("");
     const [password,setPassword] = useState("");
     const [error,setError] = useState("");
-    const {logIn} = useUserAuth();
+    const {logIn,googleSignIn,forgotPassword} = useUserAuth();
     const navigate = useNavigate();
 
     const submitHandler = async (e) => {
@@ -22,11 +22,29 @@ export default function Login() {
             setError(err.message);
         }
     }
+
+    const googleSignInHandle = async (e) => {
+        e.preventDefault();
+        try {
+            await googleSignIn();
+            navigate('/')
+        } catch (err) {
+            setError(err.message)
+        }
+    }
+    const handleForgotPassword = async (e) => {
+        e.preventDefault();
+        try {
+            await forgotPassword(email)
+        } catch (err) {
+            setError(err.message)
+        }
+    }
   return (
     <>
     <Container className='d-flex justify-content-center align-items-center' style={{minHeight:"100vh"}}>
         <Card className='p-4' style={{maxWidth:"400px"}}>
-            <div className='text-center mb-3'><h2>Login Now</h2></div>
+            <div className='text-center mb-3'><h2>Contact Manager</h2></div>
             {error && <Alert variant='danger'>{error}</Alert>}
             <Form onSubmit={submitHandler}>
                 <Form.Group>
@@ -42,11 +60,14 @@ export default function Login() {
                 </div>
             </Form>
             <div className='p-4 box mt-3 text-center'>
-                   Didn't Register Yet ? <Link to='/signup'>Register Now</Link>
+                   Didn't Register Yet ? <Link to='/signup'>Register Now</Link> <br/>
+                   <div className='mt-3'>
+                    <Link className='mt-3' to="/passwordReset">Forgot Password</Link>
+                   </div>
             </div>
             <hr></hr>
             <Card className='d-flex align-items-center justify-content-center p-2'>
-                <GoogleButton className='text-center'>
+                <GoogleButton onClick={googleSignInHandle} className='text-center'>
                 </GoogleButton>
             </Card>
         </Card>

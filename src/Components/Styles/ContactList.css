@@ -1,0 +1,5 @@
+.contact-list {
+    background: linear-gradient(to right,#AAA,rgb(68, 60, 60));
+    min-height: 90vh;
+    flex-wrap: wrap;
+}

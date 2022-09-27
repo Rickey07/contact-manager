@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Contactcard from './Contactcard'
+import {Container} from 'react-bootstrap'
 
 
 
@@ -7,16 +8,16 @@ export default function Contactlist({contactDetailsRecieved,idHandler,searchedTx
   let filteredContactDetails;
   const filterContacts = (searchedTxt) => {
     filteredContactDetails = contactDetailsRecieved.filter((contact) => {
-      return contact.name.includes(searchedTxt);
+      return contact.name.toLowerCase().includes(searchedTxt);
     })
-    console.log(filteredContactDetails);
-    console.log(searchedTxt);
   }
   filterContacts(searchedTxt);
   return (
-    <div className='d-flex flex-column justify-content-center'>
-      <h3>Contacts</h3>
-      {filteredContactDetails.length<1?"No results Found":filteredContactDetails.map(contact => <Contactcard contact = {contact} key={contact.id} idHandler={idHandler}/>)}
-    </div>
+    <>
+      <h3 className='text-center'>Contacts</h3>
+    <Container className='d-flex flex-row justify-content-center gap-3 contact-list'>
+      {filteredContactDetails.length<1?`No Results Found`:filteredContactDetails.map(contact => <Contactcard contact = {contact} key={contact.id} idHandler={idHandler}/>)}
+    </Container>
+    </>
   )
 } 
