@@ -1,14 +1,13 @@
 import "./App.css";
 import Navbar from "./Components/Navbar";
 import React, { useEffect, useState } from "react";
-import { BrowserRouter as Router, Link, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Addcontact from "./Components/Addcontact";
 import Contactlist from "./Components/Contactlist";
 import Contactdetail from "./Components/Contactdetail";
 import Contactedit from "./Components/Contactedit";
 import Signup from "./Components/Signup";
 import Login from "./Components/Login";
-import Logout from "./Components/Logout";
 import PasswordReset from "./Components/PasswordReset";
 import "bootstrap/dist/css/bootstrap.css";
 import { UserAuthContextProvider } from "./Contexts/AuthContext";

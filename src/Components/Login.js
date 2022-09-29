@@ -5,28 +5,22 @@ import {
   Form,
   Button,
   Alert,
-  ModalHeader,
 } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import GoogleButton from "react-google-button";
 import { useUserAuth } from "../Contexts/AuthContext";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { useModeContext } from "../Contexts/ModeContext";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const { logIn, googleSignIn, forgotPassword } = useUserAuth();
+  const { logIn, googleSignIn } = useUserAuth();
   const { mode } = useModeContext();
   const {user} = useUserAuth();
   const navigate = useNavigate();
 
-  if (user) {
-    navigate("/");
-  } else {
-    navigate('/login');
-  }
 
   const submitHandler = async (e) => {
     e.preventDefault();
@@ -48,14 +42,15 @@ export default function Login() {
       setError(err.message);
     }
   };
-  const handleForgotPassword = async (e) => {
-    e.preventDefault();
-    try {
-      await forgotPassword(email);
-    } catch (err) {
-      setError(err.message);
+
+  
+  useEffect(() => {
+    if (user) {
+      navigate("/");
+    } else {
+      navigate('/login');
     }
-  };
+  },[user])
   return (
     <>
       <Container

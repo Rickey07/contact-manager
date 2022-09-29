@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import {Container , Button , Link , Card , Form} from 'react-bootstrap' 
+import {Container , Button , Card , Form} from 'react-bootstrap' 
 import { useUserAuth } from '../Contexts/AuthContext';
 
 export default function PasswordReset () {
     const [email , setEmail] = useState("");
-    const {forgotPassword,confirmPasswordReset} = useUserAuth()
+    const {forgotPassword} = useUserAuth()
     const handlePasswordReset = async (e) => {
         e.preventDefault()
         try {

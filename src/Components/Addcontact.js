@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import { uuid } from "uuidv4";
 import { useModeContext } from "../Contexts/ModeContext";
-import Navbar from "./Navbar";
 
 export default function Addcontact({ getContactList, contactDetailsRecieved }) {
   const navigate = useNavigate();

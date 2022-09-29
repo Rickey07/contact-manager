@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { LinkContainer } from "react-router-bootstrap";
-import { Button, Form } from "react-bootstrap";
-import { useUserAuth } from "../Contexts/AuthContext";
+import { Form } from "react-bootstrap";
 import Logout from "./Logout";
 import { useModeContext } from "../Contexts/ModeContext";
 
@@ -16,7 +14,11 @@ export default function Navbar({ getText }) {
   };
   // Send back the searchedTxt to App component
   getText(searchText);
-  // navbar navbar-expand-lg bg-dark
+  
+  // Function to change the app mode:- 
+  const setModeFunc = () => {
+    return !mode?setMode(true):setMode(false);
+  }
   return (
     <>
       <nav
@@ -73,12 +75,7 @@ export default function Navbar({ getText }) {
             <span className={`${mode?'text-light':'text-dark'}`}>
               {mode?'Light Mode':"Dark Mode"}
             </span>
-              <Form.Check
-                type="switch"
-                onClick={(e) => {
-                  return !mode ? setMode(true) : setMode(false);
-                }}
-              ></Form.Check>
+              <Form.Check type="switch" onClick={setModeFunc}></Form.Check>
             </Form>
           </div>
           </div>

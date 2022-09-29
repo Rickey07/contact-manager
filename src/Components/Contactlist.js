@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
 import Contactcard from "./Contactcard";
 import { Container } from "react-bootstrap";
 import { useModeContext } from "../Contexts/ModeContext";
+import React from 'react';  
 
 export default function Contactlist({
   contactDetailsRecieved,
