@@ -45,7 +45,7 @@ export default function Addcontact({ getContactList, contactDetailsRecieved }) {
         number: number,
         id: uuid(),
       });
-      getContactList({ name: name, email: email, number: number, id: uuid() });
+      getContactList({ name: name, email: email, number: number, id: uuid()  , contactDetails});
     }
     navigate("/");
   };
