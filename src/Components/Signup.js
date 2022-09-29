@@ -4,12 +4,14 @@ import { Alert, Button, Card , Container , Form} from 'react-bootstrap'
 import {Link} from 'react-router-dom';
 import { useUserAuth } from '../Contexts/AuthContext';
 import { useNavigate } from 'react-router-dom';
+import { useModeContext } from '../Contexts/ModeContext';
 
 export default function Signup() {
     const [email,setEmail] = useState("");
     const [password,setPassword] = useState("");
     const [error,setError] = useState("");
     const {signUp} = useUserAuth();
+    const {mode} = useModeContext();
     const navigate = useNavigate();
 
     const submitHandler = async (e) => {
@@ -24,8 +26,8 @@ export default function Signup() {
     }
   return (
     <>
-    <Container className='d-flex justify-content-center align-items-center' style={{minHeight:"100vh"}}>
-        <Card className='p-4' style={{maxWidth:"400px"}}>
+    <Container className={`d-flex justify-content-center align-items-center mt-5 ${mode?'bg-dark':'bg-light'}`} style={{minHeight:"80vh"}}>
+        <Card className={`p-4 ${mode?'bg-secondary text-light':'bg-light'}`} style={{maxWidth:"400px"}}>
             {error && <Alert variant='danger'>{error}</Alert>}
             <div className='text-center mb-3'><h2>Sign Up</h2></div>
             <Form onSubmit={submitHandler}>
@@ -42,7 +44,7 @@ export default function Signup() {
                 </div>
             </Form>
             <div className='p-4 box mt-3 text-center'>
-                    Already Have an Account? <Link to='/login'>Login</Link>
+                    Already Have an Account? <Link to='/login' className={`${mode?'text-white':'text-dark'}`}>Login</Link>
             </div>
         </Card>
     </Container>

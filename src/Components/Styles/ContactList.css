@@ -1,5 +1,12 @@
-.contact-list {
-    background: linear-gradient(to right,#AAA,rgb(68, 60, 60));
-    min-height: 90vh;
-    flex-wrap: wrap;
+.dark {
+    color: #fff;
+    background-color: #777;
+}
+
+.light {
+    color: #101010;
+    background-color: #fff;
+}
+.dark-parent {
+    background-color: #101010;
 }

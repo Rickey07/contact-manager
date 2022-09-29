@@ -1,70 +1,44 @@
-# Getting Started with Create React App
+## ⭐ Simple Contact Managment App Using React & Firebase ⭐
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<br>
+<br>
 
-## Available Scripts
+## 📌 **Live Site URL:** <a href="https://background-change-project.netlify.app/">**Visit Now** 🚀</a>
 
-In the project directory, you can run:
+<br>
 
-### `npm start`
+## 📌 Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+[![HTML](https://img.shields.io/badge/html5%20-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white)](https://github.com/Rickey07)&nbsp;
+[![CSS](https://img.shields.io/badge/css3%20-%231572B6.svg?&style=for-the-badge&logo=css3&logoColor=white)](https://github.com/Rickey07)&nbsp;
+[![JS](https://img.shields.io/badge/javascript%20-%231572Y6.svg?&style=for-the-badge&logo=Javascript&logoColor=white)](https://github.com/Rickey07)&nbsp;
+[![JS](https://img.shields.io/badge/React%20-%231572B6.svg?&style=for-the-badge&logo=React&logoColor=white)](https://github.com/Rickey07)&nbsp;
+[![JS](https://img.shields.io/badge/Firebase%20-%231572Y6.svg?&style=for-the-badge&logo=Firebase&logoColor=white)](https://github.com/Rickey07)&nbsp;
+<br>
+<br>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 📌 My process
 
-### `npm test`
+- It took me about **5 Days** to complete this project.
+- I've build the basic CRUD Functionality First then Implemented other things.
+- Created individual components.
+- Created CRUD functionality using Localstorage.
+- API used for creating the random images.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## 📌 What I Learn
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+👉 Learn about different hooks useState,useContext,useEffect.
+👉 Learn about firebase authentication in react app.
+👉 Learn about how to implement dark mode using UseContext hook.
+👉 Learn about how to write pseduocode for the apps.
+👉 Got an good grasp over props & propdrilling & how to avoid propdrilling.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 📬 Connect With Me
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **LinkedIn** - [Prabadhya Upadhyay](https://www.linkedin.com/in/prabadhya-upadhyay-4272881a1/)
+- **Twitter** - [@Prabadhya_U](https://twitter.com/Prabadhya_U)
 
-### `npm run eject`
+## 📌 Acknowledgments
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- This ReadMe File Inspired From - [Prashant Naikwadi](https://github.com/prakash-naikwadi);

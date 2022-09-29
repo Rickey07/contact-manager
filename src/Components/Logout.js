@@ -4,7 +4,7 @@ import { useUserAuth } from '../Contexts/AuthContext'
 
 
 export default function Logout() {
-    const {logout} =  useUserAuth();
+    const {logout ,user} =  useUserAuth();
     const handleLogout = async (e) => {
         try {
            await logout();
@@ -14,7 +14,7 @@ export default function Logout() {
     }
   return (
     <div>
-      <Button variant="danger" onClick={handleLogout}>Logout</Button>
+      <Button variant={user?"danger":"primary"}  onClick={handleLogout}>{user?"Logout":"Login"}</Button>
     </div>
   )
 }

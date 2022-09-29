@@ -16,4 +16,6 @@ Briefely Described:-
 8.) Write a method for updating the user details
 9.) Need to include API for random images creation for the users.
 10.) Write a function to validate if the userAlready exists in the data using email and number.
-11.) Create an search functionality to filter out the user by name
+11.) Create an search functionality to filter out the user by name.
+12.) Implement dark mode using the useContextHook in entire app.
+13.) Add Firebase integration.

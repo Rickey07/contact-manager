@@ -1,24 +1,13 @@
-.contact-card {
-    box-shadow: 10px 10px 15px rgb(181, 181, 181);
-    margin-top: 2rem;
-    max-height: 150px;
+.dark {
+    color: #fff;
+    background-color: #777;
 }
 
-.contact-card:hover {
-    background: rgb(155, 155, 155);
-    color: #ffffff;
+.light {
+    color: #101010;
+    background-color: #fff;
+}
+.dark-parent {
+    background-color: #101010;
 }
 
-.user-circle {
-    max-width: 40px;
-    background: #FFF;
-    color: black;
-    border-radius: 50%;
-    text-align: center;
-    max-height: 15px;
-}
-
-.user-name {
-    text-decoration: none;
-    margin-top: 15px;
-}

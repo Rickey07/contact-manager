@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLocation } from 'react-router';
 import { useState } from 'react';
+import { useModeContext } from '../Contexts/ModeContext';
 
 export default function Contactedit() {
     const [contactDetailsRecieved,setContactDetails] = useState(JSON.parse(localStorage.getItem('contactDetailsRecieved'))===null?[]:JSON.parse(localStorage.getItem('contactDetailsRecieved')));
@@ -9,6 +10,7 @@ export default function Contactedit() {
     const {updatedName,setUpdatedName} = useState(name);
     const {updatedEmail,setUpdatedEmail} = useState(email);
     const {updatedNumber,setUpdatedNumber} = useState(number);
+    const {mode} = useModeContext();
 
     const submitHandler = (e) => {
         e.preventDefault();
@@ -20,7 +22,7 @@ export default function Contactedit() {
     
   return (
     <>
-    <div className='container mt-4'>
+    <div className={`container mt-4 ${mode?'bg-secondary text-light':'bg-light text-dark'}`}>
     <h3>Edit Contact</h3>
     <form onSubmit={submitHandler}>
     <div className="mb-3">
